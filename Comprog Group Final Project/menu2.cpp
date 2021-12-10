@@ -12,8 +12,8 @@ int main()
     string regaddress1;
     string regaddress2;
     string regnum;
-    string defuser = "dev123";
-    string defpass = "foodmonkey123";
+    string defuser = "dev";
+    string defpass = "foodmonkey";
     string deffname = "Food";
     string deflname = "Monkey";
     string defeaddress = "foodmonkey@gmail.com";
@@ -23,9 +23,8 @@ int main()
     string loguser;
     string logpass;
     int order=1;
-    int exit;
     int command;
-    int x=1;
+    int exit;
     int y=1;
     int z=0;
 
@@ -50,11 +49,13 @@ int main()
             getline (cin, logpass);
             if (loguser==regusername && logpass==regpass)
             {
+                cout << "\n\n\n\n\t\t\t\t\tWelcome to FoodMonkey, "<< regfname << "!" << endl;
                 y=0;
                 z=1;
             }
-            else if (loguser=="dev123" && logpass=="foodmonkey123")
+            else if (loguser=="dev" && logpass=="foodmonkey")
             {
+                cout << "\n\n\n\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
                 y=0;
                 z=1;
             }
@@ -115,23 +116,14 @@ int main()
     }
     if (z==1)
     {
-        if (loguser==regusername && logpass==regpass)
+        do //purpose ani kay para maka loop ang customer balik diri up to 5 orders
         {
-            cout << "\n\n\n\n\t\t\t\t\tWelcome to FoodMonkey, "<< regfname << "!" << endl;
+            cout << "\n\n\t\t\t      Select Restaurants, Eateries, & Fast Food Chains:" << endl;
+            //butang diri ang mga food shops
+            //gamit ug switch case after makapili ug input ang customer
+            order=6; //temp code para dili mag infinite loop
         }
-        else if (loguser=="dev123" && logpass=="foodmonkey123")
-        {
-            cout << "\n\n\n\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
-        }
-        do
-        {
-            while (x==1)
-            {
-                cout << "\n\n\t\t\t      Select Restaurants, Eateries, & Fast Food Chains:" << endl;
-                x=0;
-            }
-        }
-        while (order<5);
+        while (order<=5);
     }
 return 0;
 }
