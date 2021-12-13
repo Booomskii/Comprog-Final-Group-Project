@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <windows.h>
 using namespace std;
 
 int main()
@@ -24,8 +25,17 @@ int main()
     string logpass;
     int command;
     int exit;
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int g = 0;
+    int r = 1;
+    int u = 0;
     int y=1;
     int z=0;
+    int select=0;
+	float select2=0;
+    int select3=0;
 	double MF1=0, MF2=0, MF3=0, MF4=0, MF5=0;
 	double J1=0, J2=0, J3=0, J4=0, J5=0;
 	double M1=0, M2=0, M3=0, M4=0, M5=0;
@@ -37,6 +47,8 @@ int main()
 	double BK1=0, BK2=0, BK3=0, BK4=0, BK5=0;
 	double OB1=0, OB2=0, OB3=0, OB4=0, OB5=0;
 
+while (r>=1)
+{
     while (y==1)
     {
         cout << "\n\t\t\t\t\t\t FoodMonkey"<< endl;
@@ -45,6 +57,7 @@ int main()
         cout << "\n\t\t\t\t Log-in       |\t    Register \t|\tExit"<< endl;
         cout << "\nPress number of instruction:" << endl;
         cin >> command;
+        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
         switch (command)
         {
             case 1:
@@ -56,15 +69,20 @@ int main()
             getline (cin, loguser);
             cout << "\n\t\t\t\t Password: ";
             getline (cin, logpass);
+            Sleep(500);
             if (loguser==regusername && logpass==regpass)
             {
-                cout << "\n\n\n\n\t\t\t\t\tWelcome to FoodMonkey, "<< regfname << "!" << endl;
+                cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+                cout << "\n\n\t\t\t\t\tWelcome to FoodMonkey, "<< regfname << "!" << endl;
+                u=1;
                 y=0;
                 z=1;
             }
             else if (loguser=="dev" && logpass=="foodmonkey")
             {
-                cout << "\n\n\n\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
+                cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+                cout << "\n\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
+                u=2;
                 y=0;
                 z=1;
             }
@@ -109,8 +127,9 @@ int main()
             switch (exit)
             {
                 case 1:
-                cout << "\n\t\t\t\t\tThank you for using the App!";
+                cout << "\n\t\t\t\t\tThank you for using the App!\n\n";
                 y=0;
+                r=0;
                 break;
                 case 2:
                 y=1;
@@ -126,8 +145,6 @@ int main()
     if (z==1)
     {
 		int x=0;
-		int select=0;
-		float select2=0;
     	char choice;
 		command = 0;
 
@@ -142,12 +159,15 @@ int main()
         cout << "\n\n\t\t\t\t            [8] KFC";
         cout << "\n\n\t\t\t\t            [9] Burger King";
         cout << "\n\n\t\t\t\t            [10] Orange Brutus";
+        cout << "\n\n\t\t\t\t            [11] Cancel";
 		cout << "\n\nEnter the Selected Food Shop: ";
 		cin >> command;
+        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
 		switch(command)		
 		{
-			while (x==1)
-			{ 
+		while (x==1)
+			{
+            g=1;
 			case 1:
 				printf("\n\t\t\t\t\t     Manila FoodShoppe");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -186,23 +206,28 @@ int main()
 					MF5 = MF5 + select2 * 235.50;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+                    select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
 			while (x==1)
-			{ 
+			{
+            g=1;
 			case 2:
 				printf("\n\t\t\t\t\t\tJollibee");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -241,7 +266,7 @@ int main()
 					J5 = J5 + select2 * 142.50;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -252,12 +277,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
 			while (x==1)
 			{
+            g=1;
 			case 3: 
 				printf("\n\t\t\t\t\t\tMcDonald's");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -296,7 +325,7 @@ int main()
 					M5 = M5 + select2 * 134.50;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -307,12 +336,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
 			while (x==1)
 			{
+            g=1;
 			case 4:
 				printf("\n\t\t\t\t\t\tLa Fortuna");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -351,7 +384,7 @@ int main()
 					LF5 = LF5 + select2 * 50.00;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -362,12 +395,12 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
 			}
 			break;
 			while (x==1)
 			{
+            g=1;
 			case 5:
 				printf("\n\t\t\t\t\t\tChowking");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -406,7 +439,7 @@ int main()
 					CK5 = CK5 + select2 * 44.50;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -417,12 +450,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
 			while (x==1)
 			{
+            g=1;
 			case 6:
 				printf("\n\t\t\t\t\t\tShakey's");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -461,7 +498,7 @@ int main()
 					S5 = S5 + select2 * 353.50;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -472,12 +509,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
             while (x==1)
 			{
+            g=1;
 			case 7:
 				printf("\n\t\t\t\t\t\tShawarma");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -516,7 +557,7 @@ int main()
 					Sh5 = Sh5 + select2 * 99.75;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -527,12 +568,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
             while (x==1)
 			{
+            g=1;
 			case 8:
 				printf("\n\t\t\t\t\t\t   KFC");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -571,7 +616,7 @@ int main()
 					KFC5 = KFC5 + select2 * 142.00;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -582,12 +627,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
             while (x==1)
 			{
+            g=1;
 			case 9:
 				printf("\n\t\t\t\t\t\tBurger King");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -626,7 +675,7 @@ int main()
 					BK5 = BK5 + select2 * 230.00;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -637,12 +686,16 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
 			}
 			break;
             while (x==1)
 			{
+            g=1;
 			case 10:
 				printf("\n\t\t\t\t\t\tOrange Brutus");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -681,7 +734,7 @@ int main()
 					OB5 = OB5 + select2 * 107.80;
 					break;
 					default:
-					printf("\nSorry We do not have that on our list.");
+					printf("\nSorry We do not have that on our list.\n");
 				}
 				cout << "\nWould you like to purchase again from the same shop? Y/N : ";
 				cin >> choice;
@@ -692,13 +745,21 @@ int main()
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
-					z=0;
 				}
-			}
+                else
+                {
+                    cout << "\n\t\t\tYou have inputted invalid response!" << endl;
+                }
+            break;
+            case 11:
+                y=1;
+            break;
 			default:
 			cout << "\nYou have inputted wrong reponse" << endl;
+            }
 		}
 	}
+    Sleep(500);
 	double MFtotal = MF1+MF2+MF3+MF4+MF5;
 	double Jtotal = J1+J2+J3+J4+J5;
 	double Mtotal = M1+M2+M3+M4+M5;
@@ -709,106 +770,295 @@ int main()
 	double KFCtotal = KFC1+KFC2+KFC3+KFC4+KFC5;
 	double BKtotal = BK1+BK2+BK3+BK4+BK5;
 	double OBtotal = OB1+OB2+OB3+OB4+OB5;
-	cout << "\n\t\t\t\t\t     Order Summary:" << endl;
-	if (MFtotal != 0)
-	{ 
-		printf("\n\t\t\t\t\t    Manila FoodShoppe");
-		printf("\n\n\t\t\tCORN SOUP..........................................Php %.2f", MF1);
-		printf("\n\n\t\t\tLOMI...............................................Php %.2f", MF2);
-		printf("\n\n\t\t\tWANTOK SOUP........................................Php %.2f", MF3);
-		printf("\n\n\t\t\tBEEF STEAK.........................................Php %.2f", MF4);
-		printf("\n\n\t\t\tBEEF CURRY.........................................Php %.2f", MF5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", MFtotal);
-	}
-	else if (Jtotal != 0)
-	{	
-		printf("\n\t\t\t\t\t\tJollibee");
-		printf("\n\n\t\t\t[1] 1PC BURGER STEAK...............................Php 77.50", J1);
-		printf("\n\n\t\t\t[3] CHICKENJOY SOLO................................Php 84.00", J2);
-		printf("\n\n\t\t\t[2] JOLLY SPAGHETTI FAMILY PAN.....................Php 220.00", J3);
-		printf("\n\n\t\t\t[4] YUM BURGER SOLO................................Php 39.75", J4);
-		printf("\n\n\t\t\t[5] JOLLY CRISPY FRIES BUCKET......................Php 142.50", J5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Jtotal);
-	}
-	else if (Mtotal != 0)
-	{
-		printf("\n\t\t\t\t\t\tMcDonald's");
-		printf("\n\n\t\t\t[1] 6PC CHICKEN MCSHARE BOX........................Php 330.50", M1);
-		printf("\n\n\t\t\t[2] CHICKEN MCDO SOLO..............................Php 75.00", M2);
-		printf("\n\n\t\t\t[4] McCRISPY CHICKEN FILLET ALA KING SOLO..........Php 59.75", M3);
-		printf("\n\n\t\t\t[3] McCRISPY CHICKEN SANDWHICH.....................Php 45.00", M4);
-		printf("\n\n\t\t\t[5] BFF FRIES......................................Php 134.50", M5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Mtotal);
-	}
-	else if (LFtotal != 0)
-	{
-		printf("\n\t\t\t\t\t\tLa Fortuna");
-		printf("\n\n\t\t\tBELGIUM PLAIN (4pc's)..............................Php %.2f", LF1);
-		printf("\n\n\t\t\tBELGIUM UBE (4pc's)................................Php %.2f", LF2);
-		printf("\n\n\t\t\tTIKOY WHITE........................................Php %.2f", LF3);
-		printf("\n\n\t\t\tPIANONO............................................Php %.2f", LF4);
-		printf("\n\n\t\t\tDICE HOPIA BIG.....................................Php %.2f", LF5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", LFtotal);
-	}
-	else if (CKtotal != 0)
-	{
-		printf("\n\t\t\t\t\t\tChowking");
-		printf("\n\n\t\t\tPORK CHAO FAN......................................Php 73.50", CK1);
-		printf("\n\n\t\t\tBEEF CHAO FAN......................................Php 100.00", CK2);
-		printf("\n\n\t\t\tCHINESE-STYLE FRIED CHICKEN........................Php 131.75", CK3);
-		printf("\n\n\t\t\tSWEET 'n' SOUR PORK................................Php 134.00", CK4);
-		printf("\n\n\t\t\tCHUNKY ASADO SIOPAO................................Php 44.50", CK5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", CKtotal);
-	}
-	else if (Stotal != 0)
-	{
-		printf("\n\t\t\t\t\t\tShakey's");
-		printf("\n\n\t\t\tLOUSIANA SHRIMP PIZZA..............................Php %.2f", S1);
-		printf("\n\n\t\t\tSMOKED SALMON PIZZA................................Php %.2f", S2);
-		printf("\n\n\t\t\tANGUS BURGER PIZZA.................................Php %.2f", S3);
-		printf("\n\n\t\t\tSCALLOP PRIMO PIZZA................................Php %.2f", S4);
-		printf("\n\n\t\t\tCHEESY CHICK'N PIZZA...............................Php %.2f", S5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Stotal);
-	}
-	else if (Shtotal != 0)
-	{
-		printf("\n\n\t\t\tWRAP BEEF SHAWARMA.................................Php %.2f", Sh1);
-		printf("\n\n\t\t\tWRAP CHICKEN SHAWARMA..............................Php %.2f", Sh2);
-		printf("\n\n\t\t\tSHAWARMA RICE (BEEF)...............................Php %.2f", Sh3);
-		printf("\n\n\t\t\tSHAWARMA RICE (CHICKEN)............................Php %.2f", Sh4);
-		printf("\n\n\t\t\tSHAWARMA NOODLES...................................Php %.2f", Sh5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Shtotal);
-	}
-	else if (KFCtotal != 0)
-	{
-		printf("\n\n\t\t\tCHICKEN AND SOUP...................................Php %.2f", KFC1);
-		printf("\n\n\t\t\tREGULAR CHICKEN ALA CARTE..........................Php %.2f", KFC2);
-		printf("\n\n\t\t\tCHRISTMAS BUCKET MEAL..............................Php %.2f", KFC3);
-		printf("\n\n\t\t\tZINGER BURGER......................................Php %.2f", KFC4);
-		printf("\n\n\t\t\tALA KING RICE BOWL MEAL............................Php %.2f", KFC5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", KFCtotal);
-	}
-	else if (BKtotal != 0)
-	{
-		printf("\n\n\t\t\tHAMBURGER..........................................Php %.2f", BK1);
-		printf("\n\n\t\t\tCHEESEBURGER.......................................Php %.2f", BK2);
-		printf("\n\n\t\t\tDOUBLE WHOPPER.....................................Php %.2f", BK3);
-		printf("\n\n\t\t\tDOUBLE QUARTER POUND KING BURGER...................Php %.2f", BK4);
-		printf("\n\n\t\t\tBACON KING BURGER..................................Php %.2f", BK5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", BKtotal);
-	}
-	else if (OBtotal != 0)
-	{
-		printf("\n\n\t\t\tBRUTUS NOODLES.....................................Php %.2f", OB1);
-		printf("\n\n\t\t\tBRUTUS ARROZ CALDO.................................Php %.2f", OB2);
-		printf("\n\n\t\t\tBRUTUS PORK ADOBO RICE.............................Php %.2f", OB3);
-		printf("\n\n\t\t\tBRUTUS CRISPY CHICKEN FILLET.......................Php %.2f", OB4);
-		printf("\n\n\t\t\tBRUTUS SIZZLING FISH FILLET........................Php %.2f", OB5);
-		printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", OBtotal);
-	}
-	else
-	{
-		cout << "You have not made any order/s!" << endl;
-	}
+    if (g==1)
+    {
+        cout << "\n----------------------------------------------------------------------------------------------------------------" << endl;
+        cout << "\n\t\t\t\t\t     Order Summary:" << endl;
+        if (MFtotal != 0)
+        { 
+            printf("\n\t\t\t\t\t    Manila FoodShoppe");
+            printf("\n\n\t\t\tCORN SOUP..........................................Php %.2f", MF1);
+            printf("\n\n\t\t\tLOMI...............................................Php %.2f", MF2);
+            printf("\n\n\t\t\tWANTOK SOUP........................................Php %.2f", MF3);
+            printf("\n\n\t\t\tBEEF STEAK.........................................Php %.2f", MF4);
+            printf("\n\n\t\t\tBEEF CURRY.........................................Php %.2f", MF5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", MFtotal);
+            z=2;
+        }
+        else if (Jtotal != 0)
+        {	
+            printf("\n\t\t\t\t\t\tJollibee");
+            printf("\n\n\t\t\t[1] 1PC BURGER STEAK...............................Php %.2f", J1);
+            printf("\n\n\t\t\t[3] CHICKENJOY SOLO................................Php %.2f", J2);
+            printf("\n\n\t\t\t[2] JOLLY SPAGHETTI FAMILY PAN.....................Php %.2f", J3);
+            printf("\n\n\t\t\t[4] YUM BURGER SOLO................................Php %.2f", J4);
+            printf("\n\n\t\t\t[5] JOLLY CRISPY FRIES BUCKET......................Php %.2f", J5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Jtotal);
+            z=2;
+        }
+        else if (Mtotal != 0)
+        {
+            printf("\n\t\t\t\t\t\tMcDonald's");
+            printf("\n\n\t\t\t[1] 6PC CHICKEN MCSHARE BOX........................Php %.2f", M1);
+            printf("\n\n\t\t\t[2] CHICKEN MCDO SOLO..............................Php %.2f", M2);
+            printf("\n\n\t\t\t[4] McCRISPY CHICKEN FILLET ALA KING SOLO..........Php %.2f", M3);
+            printf("\n\n\t\t\t[3] McCRISPY CHICKEN SANDWHICH.....................Php %.2f", M4);
+            printf("\n\n\t\t\t[5] BFF FRIES......................................Php %.2f", M5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Mtotal);
+            z=2;
+        }
+        else if (LFtotal != 0)
+        {
+            printf("\n\t\t\t\t\t       La Fortuna");
+            printf("\n\n\t\t\tBELGIUM PLAIN (4pc's)..............................Php %.2f", LF1);
+            printf("\n\n\t\t\tBELGIUM UBE (4pc's)................................Php %.2f", LF2);
+            printf("\n\n\t\t\tTIKOY WHITE........................................Php %.2f", LF3);
+            printf("\n\n\t\t\tPIANONO............................................Php %.2f", LF4);
+            printf("\n\n\t\t\tDICE HOPIA BIG.....................................Php %.2f", LF5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", LFtotal);
+            z=2;
+        }
+        else if (CKtotal != 0)
+        {
+            printf("\n\t\t\t\t\t\tChowking");
+            printf("\n\n\t\t\tPORK CHAO FAN......................................Php %.2f", CK1);
+            printf("\n\n\t\t\tBEEF CHAO FAN......................................Php %.2f", CK2);
+            printf("\n\n\t\t\tCHINESE-STYLE FRIED CHICKEN........................Php %.2f", CK3);
+            printf("\n\n\t\t\tSWEET 'n' SOUR PORK................................Php %.2f", CK4);
+            printf("\n\n\t\t\tCHUNKY ASADO SIOPAO................................Php %.2f", CK5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", CKtotal);
+            z=2;
+        }
+        else if (Stotal != 0)
+        {
+            printf("\n\t\t\t\t\t\tShakey's");
+            printf("\n\n\t\t\tLOUSIANA SHRIMP PIZZA..............................Php %.2f", S1);
+            printf("\n\n\t\t\tSMOKED SALMON PIZZA................................Php %.2f", S2);
+            printf("\n\n\t\t\tANGUS BURGER PIZZA.................................Php %.2f", S3);
+            printf("\n\n\t\t\tSCALLOP PRIMO PIZZA................................Php %.2f", S4);
+            printf("\n\n\t\t\tCHEESY CHICK'N PIZZA...............................Php %.2f", S5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Stotal);
+            z=2;
+        }
+        else if (Shtotal != 0)
+        {
+            printf("\n\n\t\t\tWRAP BEEF SHAWARMA.................................Php %.2f", Sh1);
+            printf("\n\n\t\t\tWRAP CHICKEN SHAWARMA..............................Php %.2f", Sh2);
+            printf("\n\n\t\t\tSHAWARMA RICE (BEEF)...............................Php %.2f", Sh3);
+            printf("\n\n\t\t\tSHAWARMA RICE (CHICKEN)............................Php %.2f", Sh4);
+            printf("\n\n\t\t\tSHAWARMA NOODLES...................................Php %.2f", Sh5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", Shtotal);
+            z=2;
+        }
+        else if (KFCtotal != 0)
+        {
+            printf("\n\n\t\t\tCHICKEN AND SOUP...................................Php %.2f", KFC1);
+            printf("\n\n\t\t\tREGULAR CHICKEN ALA CARTE..........................Php %.2f", KFC2);
+            printf("\n\n\t\t\tCHRISTMAS BUCKET MEAL..............................Php %.2f", KFC3);
+            printf("\n\n\t\t\tZINGER BURGER......................................Php %.2f", KFC4);
+            printf("\n\n\t\t\tALA KING RICE BOWL MEAL............................Php %.2f", KFC5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", KFCtotal);
+            z=2;
+        }
+        else if (BKtotal != 0)
+        {
+            printf("\n\n\t\t\tHAMBURGER..........................................Php %.2f", BK1);
+            printf("\n\n\t\t\tCHEESEBURGER.......................................Php %.2f", BK2);
+            printf("\n\n\t\t\tDOUBLE WHOPPER.....................................Php %.2f", BK3);
+            printf("\n\n\t\t\tDOUBLE QUARTER POUND KING BURGER...................Php %.2f", BK4);
+            printf("\n\n\t\t\tBACON KING BURGER..................................Php %.2f", BK5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", BKtotal);
+            z=2;
+        }
+        else if (OBtotal != 0)
+        {
+            printf("\n\n\t\t\tBRUTUS NOODLES.....................................Php %.2f", OB1);
+            printf("\n\n\t\t\tBRUTUS ARROZ CALDO.................................Php %.2f", OB2);
+            printf("\n\n\t\t\tBRUTUS PORK ADOBO RICE.............................Php %.2f", OB3);
+            printf("\n\n\t\t\tBRUTUS CRISPY CHICKEN FILLET.......................Php %.2f", OB4);
+            printf("\n\n\t\t\tBRUTUS SIZZLING FISH FILLET........................Php %.2f", OB5);
+            printf("\n\n\t\t\t\t\t\t\t\t    Total: Php %.2f", OBtotal);
+            z=2;
+        }
+        else
+        {
+            cout << "You have not made any order/s!" << endl;
+        }
+    }
+    if(z==2)
+    {
+        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+        Sleep(1500);
+        int method;
+        int proceed;
+        string oluser;
+        string olpass;
+        string bcardnum;
+        string bname;
+        string cvv;
+    
+        cout << "\n\n\t\t\t\t       Please Select Mode of Payment\n"<< endl;
+        cout << "\n\t\t     (1)\t\t\t   (2)\t\t\t     (3)" << endl;
+        cout << "\n\t\tOnline Payment       |\t      Bank Payment \t|\tCash on Delivery"<< endl;
+        cout << "\n\nEnter Selected Number: ";
+        cin >> method;
+        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+        switch (method)
+        {
+            case 1:
+            cout << "\n\n\t\t\t\t   You've Selected Online Payment Option\n" << endl;
+            cout << "\n\t\t\t\t\tPlease Select Payment Channel\n";
+            cout << "\n\n\t\t\t\t\t\t[1] Gcash"<<endl;
+            cout << "\n\t\t\t\t\t\t[2] Coins.ph"<<endl;
+            cout << "\n\t\t\t\t\t\t[3] PayMaya"<<endl;
+            cout << "\nEnter selected number: " << endl;
+            cin >> select3;
+            cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+            switch (select3)
+            {
+                case 1:
+                cout << "\n\n\t\t\t\t\t  You've selected Gcash" << endl;
+                a=1;
+                break;
+                case 2:
+                cout << "\n\n\t\t\t\t\t  You've selected Coins.ph" << endl;
+                a=1;
+                break;
+                case 3:
+                cout << "\n\n\t\t\t\t\t  You've selected Paymaya" << endl;
+                a=1;
+                break;
+                default:
+                cout << "\n\t\t\t\t   Invalid Selected Payment Method!\n\n\n" << endl;
+            }
+            if (a==1)
+                {
+                    cout << "\n\n\t\t\t\t\tPlease login to your account:";
+                    cout << "\n\n\t\t\t\tPhone Number: ";
+                    cin >> oluser;
+                    cout << "\n\t\t\t\tPassword: ";
+                    cin >> olpass;
+                    Sleep(1000);
+                    cout << "\n\n\t\t\t\t\t      Authenticating..." << endl;
+                    Sleep(1000);
+                    cout << "\n\n\t\t\t\t\t    Successfully linked!" << endl;
+                    Sleep(1000);
+                    c=1;
+                }
+            break;
+            case 2:
+            cout << "\n\n\t\t\t\t   You've Selected Bank Payment Option\n" << endl;
+            cout << "\n\t\t\t\t\tPlease Select Payment Channel\n";
+            cout << "\n\n\t\t\t\t\t\t[1] BPI"<<endl;
+            cout << "\n\t\t\t\t\t\t[2] BDO"<<endl;
+            cout << "\n\t\t\t\t\t\t[3] Land Bank"<<endl;
+            cout << "\n\t\t\t\t\t\t[4] China Bank"<<endl;
+            cout << "\n\t\t\t\t\t\t[5] Metro Bank"<<endl;
+            cout << "\nEnter selected number: " << endl;
+            cin >> select3;
+            switch (select3)
+            {
+                case 1:
+                cout << "\n\n\t\t\t\t\t  You've selected BPI" << endl;
+                b=1;
+                break;
+                case 2:
+                cout << "\n\n\t\t\t\t\t  You've selected BDO" << endl;
+                b=1;
+                break;
+                case 3:
+                cout << "\n\n\t\t\t\t\t  You've selected Land Bank" << endl;
+                b=1;
+                break;
+                case 4:
+                cout << "\n\n\t\t\t\t\t  You've selected China Bank" << endl;
+                b=1;
+                break;
+                case 5:
+                cout << "\n\n\t\t\t\t\t  You've selected Metro Bank" << endl;
+                b=1;
+                break;
+                default:
+                cout << "\n\t\t\t\t   Invalid Selected Payment Method!\n\n\n" << endl;
+            }
+            if (b==1)
+                {
+                    cout << "\n\n\t\t\t\t\tPlease enter Bank Credentials:";
+                    cout << "\n\n\t\t\t\tCard Number: ";
+                    cin >> bcardnum;
+                    cout << "\n\t\t\t\tName: ";
+                    cin >> bname;
+                    cout << "\n\t\t\t\tCVV/CVC: ";
+                    cin >> cvv;
+                    Sleep(1000);
+                    cout << "\n\n\t\t\t\t\t      Authenticating..." << endl;
+                    Sleep(1000);
+                    cout << "\n\n\t\t\t\t\t    Successfully linked!" << endl;
+                    Sleep(1000);
+                    c=1;
+                }
+            break;
+            case 3:
+            cout << "\n\n\t\t\t\t   You've Selected Cash-on-Delivery Option\n" << endl;
+            cout << "\n\t\t\t\tPlease pay the the total amount upon delivery.\n\n"<<endl;
+            c=1;
+            break;
+             default:
+            cout << "\n\t\t\tInputted number of instruction not assigned!" << endl;
+        }
+    }
+    if (c==1)
+    {    
+        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+        char confirm;
+        if (u==1)
+        {
+            cout << "\n\t\t\t\t\tFood Delivery Addressed to:" << endl;
+            cout << "\n\t\t\t\tName: " << regfname << " " << reglname << endl;
+            cout << "\n\t\t\t\tEmail Address: " << regeaddress << endl;
+            cout << "\n\t\t\t\tAddress/es: " << regaddress1 << endl;
+            cout << "\n\t\t\t\t\t    "<< regaddress2 << endl;
+            cout << "\n\t\t\t\tContact Number: " << regnum << endl;
+        }
+        else if (u==2)
+        {
+            cout << "\n\t\t\t\t\t  Food Delivery Addressed to:" << endl;
+            cout << "\n\t\t\t\tName: " << deffname << " " << deflname << endl;
+            cout << "\n\t\t\t\tEmail Address: " << defeaddress << endl;
+            cout << "\n\t\t\t\tAddress/es: " << defaddress1 << endl;
+            cout << "\n\t\t\t\t\t    " << defaddress2 << endl;
+            cout << "\n\t\t\t\tContact Number: " << defnum << endl;
+        }
+        cout<<"\n\nDo you wish to Confirm? Y/N: ";
+        cin>>confirm;
+        if (confirm=='Y' || confirm=='y')
+        {
+        cout << "\n\n\t\t\t\t\t    Thank You for Ordering!" << endl;
+        cout << "\n\t\t     Please wait for your food to be Delivered, our Monkey Driver is on its way!\n\n" << endl;
+        
+        r=0;
+        }
+        else if (confirm=='N' || confirm=='n')
+        {
+            cout << "\nDo you wish to cancel current order and go back to Main Page (Y)? Otherwise redirects you back to Payment page (N) :  ";
+            cin >> confirm;
+            cout << "\n\n";
+            if (confirm=='Y' || confirm=='y')
+            {
+                r++;
+                y=1;
+            }
+            else if (confirm=='N' || confirm=='n')
+            {
+                c=0;
+                z=0;
+            }
+        }
+        else
+        {
+            cout << "\n\t\t\t\t   You inputted response is Invalid\n\n\n" << endl;
+        }
+    }
+}
 return 0;
 }
