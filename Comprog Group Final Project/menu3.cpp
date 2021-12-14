@@ -52,6 +52,7 @@ while (r>=1)
 {
     while (y==1)
     {
+		cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
         cout << "\n\t\t\t\t\t\t FoodMonkey"<< endl;
         cout << "\t\t\t\t  Your Number 1 Food Delivery App on the Go!\n\n"<< endl;
         cout << "\n\t\t\t\t  (1)\t\t      (2)\t\t (3)" << endl;
@@ -64,34 +65,58 @@ while (r>=1)
             case 1:
             cout << "\n\t\t\t\t\t\t FoodMonkey" << endl;
             cout << "\t\t\t\t  Your Number 1 Food Delivery App on the Go!\n\n" << endl;
-            cout << "\n\t\t\t\t\t      Log-in to Account\n";
-            cout << "\n\t\t\t\t Username: ";
-            cin.ignore(1,'\n');
-            getline (cin, loguser);
-            cout << "\n\t\t\t\t Password: ";
-            getline (cin, logpass);
-            Sleep(500);
-            if (loguser==regusername && logpass==regpass)
-            {
-                cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
-                cout << "\n\n\t\t\t\t\tWelcome to FoodMonkey, "<< regfname << "!" << endl;
-                u=1;
-                y=0;
-                z=1;
-            }
-            else if (loguser=="dev" && logpass=="foodmonkey")
-            {
-                cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
-                cout << "\n\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
-                u=2;
-                y=0;
-                z=1;
-            }
-            else
-            {
-                cout << "\n\t\t\t\t   You have entered wrong Username/Password!\n\n\n" << endl;
-                y=1;
-            }
+			Sleep(1000);
+			if (r>=2 && loguser=="dev" && logpass=="foodmonkey")
+			{
+				cout << "\n\t\t\t    You have already logged in, proceeding to Food Shops...\n" << endl;
+				Sleep(2500);
+				cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+				cout << "\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
+				u=2;
+				y=0;
+				z=1;
+			}
+			else if (r>=2 && loguser==regusername && logpass==regpass)
+			{
+				cout << "\n\t\t\t    You have already logged in, proceeding to Food Shops...\n" << endl;
+				Sleep(2500);
+				cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+				cout << "\n\n\t\t\t\t\t     Welcome back, "<< regfname << "!" << endl;
+				u=1;
+				y=0;
+				z=1;
+			}
+			if (r==1)
+			{
+				cout << "\n\t\t\t\t\t      Log-in to Account\n";
+				cout << "\n\t\t\t\t Username: ";
+				cin.ignore(1,'\n');
+				getline (cin, loguser);
+				cout << "\n\t\t\t\t Password: ";
+				getline (cin, logpass);
+				Sleep(500);
+				if (loguser==regusername && logpass==regpass)
+				{
+					cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+					cout << "\n\n\t\t\t\t\tWelcome to FoodMonkey, "<< regfname << "!" << endl;
+					u=1;
+					y=0;
+					z=1;
+				}
+				else if (loguser=="dev" && logpass=="foodmonkey")
+				{
+					cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+					cout << "\n\n\t\t\t\t\t     Welcome back, "<< deffname << "!" << endl;
+					u=2;
+					y=0;
+					z=1;
+				}
+				else
+				{
+					cout << "\n\t\t\t\t   You have entered wrong Username/Password!\n\n\n" << endl;
+					y=1;
+				}
+			}
             break;
             case 2:
             cout << "\n\t\t\t\t\t\t FoodMonkey" << endl;
@@ -166,7 +191,6 @@ while (r>=1)
         cout << "\n\n\t\t\t\t            [11] Cancel";
 		cout << "\n\nEnter the Selected Food Shop: ";
 		cin >> command;
-        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
 		switch(command)		
 		{
 		while (x==1)
@@ -766,6 +790,9 @@ while (r>=1)
             break;
             case 11:
                 y=1;
+				g=0;
+				z=0;
+				c=0;
             break;
 			default:
 			cout << "\nYou have inputted wrong reponse" << endl;
@@ -995,7 +1022,7 @@ while (r>=1)
             }
             if (b==1)
                 {
-                    cout << "\n\n\t\t\t\t\tPlease enter Bank Credentials:";
+                    cout << "\n\n\t\t\t\t    Please enter Bank Credentials:";
                     cout << "\n\n\t\t\t\tCard Number: ";
                     cin >> bcardnum;
                     cout << "\n\t\t\t\tName: ";
@@ -1021,7 +1048,7 @@ while (r>=1)
     }
     if (c==1)
     {    
-        cout << "\n\n----------------------------------------------------------------------------------------------------------------" << endl;
+        cout << "\n----------------------------------------------------------------------------------------------------------------" << endl;
         char confirm;
         if (u==1)
         {
@@ -1054,17 +1081,37 @@ while (r>=1)
         {
             cout << "\nDo you wish to cancel current order and go back to Main Page (Y)? Otherwise redirects you back to Payment page (N) :  ";
             cin >> confirm;
-            cout << "\n\n";
+            cout << "\n";
             if (confirm=='Y' || confirm=='y')
             {
+		MF1=0, MF2=0, MF3=0, MF4=0, MF5=0;
+		J1=0, J2=0, J3=0, J4=0, J5=0;
+		M1=0, M2=0, M3=0, M4=0, M5=0;
+		LF1=0, LF2=0, LF3=0, LF4=0, LF5=0;
+		CK1=0, CK2=0, CK3=0, CK4=0, CK5=0;
+		S1=0, S2=0, S3=0, S4=0, S5=0;
+		Sh1=0, Sh2=0, Sh3=0, Sh4=0, Sh5=0;
+		KFC1=0, KFC2=0, KFC3=0, KFC4=0, KFC5=0;
+		BK1=0, BK2=0, BK3=0, BK4=0, BK5=0;
+		OB1=0, OB2=0, OB3=0, OB4=0, OB5=0;
                 r++;
                 y=1;
+		Sleep(3000);
             }
             else if (confirm=='N' || confirm=='n')
             {
                 c=0;
                 z=0;
+		Sleep(2000);
             }
+		else
+		{
+			cout << "\nYou have inputted wrong reponse" << endl;
+			z=0;
+			g=0;
+			c=0;
+			r=0;
+		}
         }
         else
         {
