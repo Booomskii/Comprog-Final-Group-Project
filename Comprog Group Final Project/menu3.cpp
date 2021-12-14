@@ -31,6 +31,7 @@ int main()
     int g = 0;
     int r = 1;
     int u = 0;
+	int x=0;
     int y=1;
     int z=0;
     int select=0;
@@ -129,6 +130,10 @@ while (r>=1)
                 case 1:
                 cout << "\n\t\t\t\t\tThank you for using the App!\n\n";
                 y=0;
+				x=0;
+				z=0;
+				g=0;
+				c=0;
                 r=0;
                 break;
                 case 2:
@@ -144,7 +149,6 @@ while (r>=1)
     }
     if (z==1)
     {
-		int x=0;
     	char choice;
 		command = 0;
 
@@ -167,7 +171,6 @@ while (r>=1)
 		{
 		while (x==1)
 			{
-            g=1;
 			case 1:
 				printf("\n\t\t\t\t\t     Manila FoodShoppe");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -218,6 +221,7 @@ while (r>=1)
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -227,13 +231,12 @@ while (r>=1)
 			break;
 			while (x==1)
 			{
-            g=1;
 			case 2:
 				printf("\n\t\t\t\t\t\tJollibee");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
 				printf("\n\n\t\t\t[1] 1PC BURGER STEAK...................................Php 77.50");
-				printf("\n\n\t\t\t[3] CHICKENJOY SOLO....................................Php 84.00");
-				printf("\n\n\t\t\t[2] JOLLY SPAGHETTI FAMILY PAN.........................Php 220.00");
+				printf("\n\n\t\t\t[2] CHICKENJOY SOLO....................................Php 84.00");
+				printf("\n\n\t\t\t[3] JOLLY SPAGHETTI FAMILY PAN.........................Php 220.00");
 				printf("\n\n\t\t\t[4] YUM BURGER SOLO....................................Php 39.75");
 				printf("\n\n\t\t\t[5] JOLLY CRISPY FRIES BUCKET..........................Php 142.50");
 				printf("\n\nSelect food item to buy: " );
@@ -272,11 +275,12 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
-					x==1;
+					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -292,8 +296,8 @@ while (r>=1)
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
 				printf("\n\n\t\t\t[1] 6PC CHICKEN MCSHARE BOX............................Php 330.50");
 				printf("\n\n\t\t\t[2] CHICKEN MCDO SOLO..................................Php 75.00");
-				printf("\n\n\t\t\t[4] McCRISPY CHICKEN FILLET ALA KING SOLO..............Php 59.75");
-				printf("\n\n\t\t\t[3] McCRISPY CHICKEN SANDWHICH.........................Php 45.00");
+				printf("\n\n\t\t\t[3] McCRISPY CHICKEN FILLET ALA KING SOLO..............Php 59.75");
+				printf("\n\n\t\t\t[4] McCRISPY CHICKEN SANDWHICH.........................Php 45.00");
 				printf("\n\n\t\t\t[5] BFF FRIES..........................................Php 134.50");
 				printf("\n\nSelect food item to buy: " );
 				scanf("%d", &select);
@@ -331,6 +335,7 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
@@ -345,7 +350,6 @@ while (r>=1)
 			break;
 			while (x==1)
 			{
-            g=1;
 			case 4:
 				printf("\n\t\t\t\t\t\tLa Fortuna");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -390,17 +394,18 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
 			}
 			break;
 			while (x==1)
 			{
-            g=1;
 			case 5:
 				printf("\n\t\t\t\t\t\tChowking");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -445,11 +450,13 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -459,7 +466,6 @@ while (r>=1)
 			break;
 			while (x==1)
 			{
-            g=1;
 			case 6:
 				printf("\n\t\t\t\t\t\tShakey's");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -504,11 +510,13 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -518,7 +526,6 @@ while (r>=1)
 			break;
             while (x==1)
 			{
-            g=1;
 			case 7:
 				printf("\n\t\t\t\t\t\tShawarma");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -563,11 +570,13 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -577,7 +586,6 @@ while (r>=1)
 			break;
             while (x==1)
 			{
-            g=1;
 			case 8:
 				printf("\n\t\t\t\t\t\t   KFC");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -622,11 +630,13 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -636,7 +646,6 @@ while (r>=1)
 			break;
             while (x==1)
 			{
-            g=1;
 			case 9:
 				printf("\n\t\t\t\t\t\tBurger King");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -681,11 +690,13 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
@@ -695,7 +706,6 @@ while (r>=1)
 			break;
             while (x==1)
 			{
-            g=1;
 			case 10:
 				printf("\n\t\t\t\t\t\tOrange Brutus");
 				printf("\n\n\t\t\tFoods\t\t\t\t\t\t\tPrice");
@@ -740,23 +750,25 @@ while (r>=1)
 				cin >> choice;
 				if (choice=='Y' || choice=='y')
 				{
+					select=0;
 					x=1;
 				}
 				else if (choice=='N' || choice=='n')
 				{
 					x=0;
+					g=1;
 				}
                 else
                 {
                     cout << "\n\t\t\tYou have inputted invalid response!" << endl;
                 }
+			}
             break;
             case 11:
                 y=1;
             break;
 			default:
 			cout << "\nYou have inputted wrong reponse" << endl;
-            }
 		}
 	}
     Sleep(500);
