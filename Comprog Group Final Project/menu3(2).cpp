@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <windows.h>
 using namespace std;
 
 int main()
@@ -1101,7 +1100,7 @@ while (r>=1)
         }
         else
         {
-            cout << "\n\t\t\t\t   You inputted response is Invalid\n\n\n" << endl;
+            cout << "\n\t\t\t\t   Your inputted response is Invalid\n\n\n" << endl;
         }
     }
 }
